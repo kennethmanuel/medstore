@@ -30,14 +30,14 @@
             <tbody>
                 @foreach($medicine_collection as $medicine)
                 <tr>
-                    <td>{{ $medicine['Generic Name'] }}</td>
-                    <td>{{ $medicine['Form'] }}</td>
-                    <td>{{ $medicine['Restriction Formula'] }}</td>
-                    <td>{{ $medicine['Description'] }}</td>
-                    <td>{{ $medicine['Faskes TK1'] }}</td>
-                    <td>{{ $medicine['Faskes TK2'] }}</td>
-                    <td>{{ $medicine['Faskes TK3'] }}</td>
-                    <td>{{ $medicine['Category'] }}</td>
+                    <td>{{ $medicine['generic_name'] }}</td>
+                    <td>{{ $medicine['form'] }}</td>
+                    <td>{{ $medicine['restriction_formula'] }}</td>
+                    <td>{{ $medicine['description'] }}</td>
+                    <td>{{ $medicine['faskes_tk1'] }}</td>
+                    <td>{{ $medicine['faskes_tk2'] }}</td>
+                    <td>{{ $medicine['faskes_tk3'] }}</td>
+                    <td>{{ $medicine['category'] }}</td>
                 </tr>
                 @endforeach
             </tbody>

@@ -14,7 +14,7 @@ class AddCategoryToMedicines extends Migration
     public function up()
     {
         Schema::table('medicines', function (Blueprint $table) {
-            $table->foreignId('Category')->references('id')->on('categories');
+            $table->foreignId('category')->references('id')->on('categories');
         });
     }
 
@@ -26,8 +26,8 @@ class AddCategoryToMedicines extends Migration
     public function down()
     {
         Schema::table('medicines', function (Blueprint $table) {
-            $table->dropForeign(['Category']);
-            $table->dropColumn('Category');
+            $table->dropForeign(['category']);
+            $table->dropColumn('category');
         });
     }
 }

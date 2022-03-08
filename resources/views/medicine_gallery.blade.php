@@ -14,7 +14,7 @@
                                 {{-- <div class="btn-group">
                                     <button type="button" class="btn btn-sm btn-outline-secondary"><a href="/medicine/1">View</a></button>
                                 </div> --}}
-                                <h1 style="color:black">{{ $medicine['Generic Name']  }}</h1>
+                                <h1 style="color:black">{{ $medicine['generic_name']  }}</h1>
                             </div>
                         </div>
                     </div>

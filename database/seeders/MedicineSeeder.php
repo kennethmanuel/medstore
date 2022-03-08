@@ -15,258 +15,255 @@ class MedicineSeeder extends Seeder
     public function run()
     {
         DB::table('medicines')->insert([
-            'Generic Name' => 'fentanil',
-            'Form' => 'inj 0,05 mg/mL (i.m./i.v.)',
-            'Restriction Formula' => '5 amp/kasus.',
-            'Description' => 'inj: Hanya untuk nyeri berat dan harus diberikan oleh tim medis yang dapat melakukan resusitasi.',
-            'Faskes TK2' => true,
-            'Faskes TK3' => true,
-            'Category' => 1,
+            'generic_name' => 'fentanil',
+            'form' => 'inj 0,05 mg/mL (i.m./i.v.)',
+            'restriction_formula' => '5 amp/kasus.',
+            'description' => 'inj: Hanya untuk nyeri berat dan harus diberikan oleh tim medis yang dapat melakukan resusitasi.',
+            'faskes_tk2' => true,
+            'faskes_tk3' => true,
+            'category' => 1,
             'img_path' => 'medicine/faerie.jpg'
         ]);
         DB::table('medicines')->insert([
-            'Generic Name' => 'fentanil',
-            'Form' => 'patch 12,5 mcg/jam',
-            'Restriction Formula' => '10 patch/bulan.',
-            'Description' => 'patch: - Untuk nyeri kronik pada pasien kanker yang tidak terkendali.  - Tidak untuk nyeri akut.',
-            'Faskes TK2' => true,
-            'Faskes TK3' => true,
-            'Category' => 1,
+            'generic_name' => 'fentanil',
+            'form' => 'patch 12,5 mcg/jam',
+            'restriction_formula' => '10 patch/bulan.',
+            'description' => 'patch: - Untuk nyeri kronik pada pasien kanker yang tidak terkendali.  - Tidak untuk nyeri akut.',
+            'faskes_tk2' => true,
+            'faskes_tk3' => true,
+            'category' => 1,
             'img_path' => 'medicine/salve.jpg'
         ]);
         DB::table('medicines')->insert([
-            'Generic Name' => 'fentanil',
-            'Form' => 'patch 25 mcg/jam',
-            'Restriction Formula' => '10 patch/bulan.',
-            'Description' => 'patch: - Untuk nyeri kronik pada pasien kanker yang tidak terkendali.  - Tidak untuk nyeri akut.',
-            'Faskes TK2' => true,
-            'Faskes TK3' => true,
-            'Category' => 1,
+            'generic_name' => 'fentanil',
+            'form' => 'patch 25 mcg/jam',
+            'restriction_formula' => '10 patch/bulan.',
+            'description' => 'patch: - Untuk nyeri kronik pada pasien kanker yang tidak terkendali.  - Tidak untuk nyeri akut.',
+            'faskes_tk2' => true,
+            'faskes_tk3' => true,
+            'category' => 1,
             'img_path' => 'medicine/tango.jpg'
         ]);
 
         DB::table('medicines')->insert([
-            'Generic Name' => 'asam mefenamat',
-            'Form' => 'kaps 250 mg ',
-            'Restriction Formula' => '30 kaps/bulan',
-            'Faskes TK1' => true,
-            'Faskes TK2' => true,
-            'Faskes TK3' => true,
-            'Category' => 2
+            'generic_name' => 'asam mefenamat',
+            'form' => 'kaps 250 mg ',
+            'restriction_formula' => '30 kaps/bulan',
+            'faskes_tk1' => true,
+            'faskes_tk2' => true,
+            'faskes_tk3' => true,
+            'category' => 2
         ]);
         DB::table('medicines')->insert([
-            'Generic Name' => 'asam mefenamat',
-            'Form' => 'tab 500 mg ',
-            'Restriction Formula' => '30 tab/bulan.',
-            'Faskes TK1' => true,
-            'Faskes TK2' => true,
-            'Faskes TK3' => true,
-            'Category' => 2
+            'generic_name' => 'asam mefenamat',
+            'form' => 'tab 500 mg ',
+            'restriction_formula' => '30 tab/bulan.',
+            'faskes_tk1' => true,
+            'faskes_tk2' => true,
+            'faskes_tk3' => true,
+            'category' => 2
         ]);
         DB::table('medicines')->insert([
-            'Generic Name' => 'ibuprofen',
-            'Form' => 'tab 200 mg',
-            'Restriction Formula' => '30 tab/bulan',
-            'Faskes TK1' => true,
-            'Faskes TK2' => true,
-            'Faskes TK3' => true,
-            'Category' => 2
-        ]);
-
-        DB::table('medicines')->insert([
-            'Generic Name' => 'alopurinol',
-            'Description' => 'Tidak diberikan pada saat nyeri akut.',
-            'Form' => 'tab 100 mg',
-            'Restriction Formula' => '30 tab/bulan',
-            'Faskes TK1' => true,
-            'Faskes TK2' => true,
-            'Faskes TK3' => true,
-            'Category' => 3
-        ]);
-        DB::table('medicines')->insert([
-            'Generic Name' => 'alopurinol',
-            'Description' => 'Tidak diberikan pada saat nyeri akut.',
-            'Form' => 'tab 300 mg',
-            'Restriction Formula' => '30 tab/bulan',
-            'Faskes TK1' => true,
-            'Faskes TK2' => true,
-            'Faskes TK3' => true,
-            'Category' => 3
-        ]);
-        DB::table('medicines')->insert([
-            'Generic Name' => 'kolkisin',
-            'Description' => 'Tidak diberikan pada saat nyeri akut.',
-            'Form' => 'tab 100 mg',
-            'Restriction Formula' => '30 tab/bulan',
-            'Faskes TK1' => true,
-            'Faskes TK2' => true,
-            'Faskes TK3' => true,
-            'Category' => 3
+            'generic_name' => 'ibuprofen',
+            'form' => 'tab 200 mg',
+            'restriction_formula' => '30 tab/bulan',
+            'faskes_tk1' => true,
+            'faskes_tk2' => true,
+            'faskes_tk3' => true,
+            'category' => 2
         ]);
 
         DB::table('medicines')->insert([
-            'Generic Name' => 'amitriptilin',
-            'Form' => 'tab 25 mg',
-            'Restriction Formula' => '30 tab/bulan',
-            'Faskes TK1' => true,
-            'Faskes TK2' => true,
-            'Faskes TK3' => true,
-            'Category' => 4
+            'generic_name' => 'alopurinol',
+            'description' => 'Tidak diberikan pada saat nyeri akut.',
+            'form' => 'tab 100 mg',
+            'restriction_formula' => '30 tab/bulan',
+            'faskes_tk1' => true,
+            'faskes_tk2' => true,
+            'faskes_tk3' => true,
+            'category' => 3
         ]);
         DB::table('medicines')->insert([
-            'Generic Name' => 'gabapentin',
-            'Description' => 'Hanya untuk neuralgia pascaherpes atau nyeri neuropati diabetikum.',
-            'Form' => 'kaps 100mg',
-            'Restriction Formula' => '60 kaps/bulan',
-            'Faskes TK2' => true,
-            'Faskes TK3' => true,
-            'Category' => 4
+            'generic_name' => 'alopurinol',
+            'description' => 'Tidak diberikan pada saat nyeri akut.',
+            'form' => 'tab 300 mg',
+            'restriction_formula' => '30 tab/bulan',
+            'faskes_tk1' => true,
+            'faskes_tk2' => true,
+            'faskes_tk3' => true,
+            'category' => 3
         ]);
         DB::table('medicines')->insert([
-            'Generic Name' => 'gabapentin',
-            'Description' => 'Hanya untuk neuralgia pascaherpes atau nyeri neuropati diabetikum.',
-            'Form' => 'kaps 300mg',
-            'Restriction Formula' => '30 kaps/bulan',
-            'Faskes TK2' => true,
-            'Faskes TK3' => true,
-            'Category' => 4
-        ]);
-
-        DB::table('medicines')->insert([
-            'Generic Name' => 'bupivakain',
-            'Form' => 'inj 0,5%',
-            'Faskes TK2' => true,
-            'Faskes TK3' => true,
-            'Category' => 5
-        ]);
-        DB::table('medicines')->insert([
-            'Generic Name' => 'bupivakain heavy',
-            'Description' => 'Khusus untuk analgesia spinal.',
-            'Form' => 'inj 0,5% + glukosa 8% ',
-            'Faskes TK2' => true,
-            'Faskes TK3' => true,
-            'Category' => 5
-        ]);
-        DB::table('medicines')->insert([
-            'Generic Name' => 'etil klorida',
-            'Form' => 'spray 100mL',
-            'Faskes TK1' => true,
-            'Faskes TK2' => true,
-            'Faskes TK3' => true,
-            'Category' => 5
+            'generic_name' => 'kolkisin',
+            'description' => 'Tidak diberikan pada saat nyeri akut.',
+            'form' => 'tab 100 mg',
+            'restriction_formula' => '30 tab/bulan',
+            'faskes_tk1' => true,
+            'faskes_tk2' => true,
+            'faskes_tk3' => true,
+            'category' => 3
         ]);
 
         DB::table('medicines')->insert([
-            'Generic Name' => 'deksmedetomidin',
-            'Description' => 'Untuk sedasi pada pasien di ICU, kraniotomi, bedah jantung dan operasi yang memerlukan waktu pembedahan yang lama.',
-            'Form' => 'inj 100 mcg/mL',
-            'Faskes TK2' => true,
-            'Faskes TK3' => true,
-            'Category' => 6
+            'generic_name' => 'amitriptilin',
+            'form' => 'tab 25 mg',
+            'restriction_formula' => '30 tab/bulan',
+            'faskes_tk1' => true,
+            'faskes_tk2' => true,
+            'faskes_tk3' => true,
+            'category' => 4
         ]);
         DB::table('medicines')->insert([
-            'Generic Name' => 'desfluran',
-            'Form' => 'ih',
-            'Faskes TK2' => true,
-            'Faskes TK3' => true,
-            'Category' => 6
+            'generic_name' => 'gabapentin',
+            'description' => 'Hanya untuk neuralgia pascaherpes atau nyeri neuropati diabetikum.',
+            'form' => 'kaps 100mg',
+            'restriction_formula' => '60 kaps/bulan',
+            'faskes_tk2' => true,
+            'faskes_tk3' => true,
+            'category' => 4
         ]);
         DB::table('medicines')->insert([
-            'Generic Name' => 'halotan',
-            'Description' => 'Tidak boleh digunakan berulang. Tidak untuk pasien dengan gangguan fungsi hati.',
-            'Form' => 'ih',
-            'Faskes TK2' => true,
-            'Faskes TK3' => true,
-            'Category' => 6
-        ]);
-
-        DB::table('medicines')->insert([
-            'Generic Name' => 'atropin',
-            'Form' => 'inj 0,25 mg/mL (i.v./s.k.)',
-            'Faskes TK1' => true,
-            'Faskes TK2' => true,
-            'Faskes TK3' => true,
-            'Category' => 7
-        ]);
-        DB::table('medicines')->insert([
-            'Generic Name' => 'diazepam',
-            'Form' => 'inj 5 mg/mL',
-            'Faskes TK1' => true,
-            'Faskes TK2' => true,
-            'Faskes TK3' => true,
-            'Category' => 7
-        ]);
-        DB::table('medicines')->insert([
-            'Generic Name' => 'midazolam',
-            'Description' => 'Dapat digunakan untuk premedikasi sebelum induksi anestesi dan rumatan selama anestesi umum', 'Form' => 'inj 100 mcg/mL',
-            'Restriction Formula' => '1 mg/jam (24
-mg/hari).
-- Dosis premedikasi:
-8 vial/kasus',
-            'Faskes TK2' => true,
-            'Faskes TK3' => true,
-            'Category' => 7
+            'generic_name' => 'gabapentin',
+            'description' => 'Hanya untuk neuralgia pascaherpes atau nyeri neuropati diabetikum.',
+            'form' => 'kaps 300mg',
+            'restriction_formula' => '30 kaps/bulan',
+            'faskes_tk2' => true,
+            'faskes_tk3' => true,
+            'category' => 4
         ]);
 
         DB::table('medicines')->insert([
-            'Generic Name' => 'deksametason',
-            'Restriction Formula' => '20 mg/hari',
-            'Form' => 'inj 5 mg/mL',
-            'Faskes TK1' => true,
-            'Faskes TK2' => true,
-            'Faskes TK3' => true,
-            'Category' => 8
+            'generic_name' => 'bupivakain',
+            'form' => 'inj 0,5%',
+            'faskes_tk2' => true,
+            'faskes_tk3' => true,
+            'category' => 5
+        ]);
+        DB::table('medicines')->insert([
+            'generic_name' => 'bupivakain heavy',
+            'description' => 'Khusus untuk analgesia spinal.',
+            'form' => 'inj 0,5% + glukosa 8% ',
+            'faskes_tk2' => true,
+            'faskes_tk3' => true,
+            'category' => 5
+        ]);
+        DB::table('medicines')->insert([
+            'generic_name' => 'etil klorida',
+            'form' => 'spray 100mL',
+            'faskes_tk1' => true,
+            'faskes_tk2' => true,
+            'faskes_tk3' => true,
+            'category' => 5
         ]);
 
         DB::table('medicines')->insert([
-            'Generic Name' => 'difenhidramin',
-            'Restriction Formula' => '30 mg/hari.',
-            'Form' => 'inj 10 mg/mL (i.v./i.m.) ',
-            'Faskes TK1' => true,
-            'Faskes TK2' => true,
-            'Faskes TK3' => true,
-            'Category' => 8
+            'generic_name' => 'deksmedetomidin',
+            'description' => 'Untuk sedasi pada pasien di ICU, kraniotomi, bedah jantung dan operasi yang memerlukan waktu pembedahan yang lama.',
+            'form' => 'inj 100 mcg/mL',
+            'faskes_tk2' => true,
+            'faskes_tk3' => true,
+            'category' => 6
         ]);
         DB::table('medicines')->insert([
-            'Generic Name' => 'epinefrin (adrenalin)',
-            'Form' => 'inj 1 mg/mL',
-            'Faskes TK1' => true,
-            'Faskes TK2' => true,
-            'Faskes TK3' => true,
-            'Category' => 8
-        ]);
-
-        DB::table('medicines')->insert([
-            'Generic Name' => 'atropin',
-            'Form' => 'tab 0,5 mg ',
-            'Faskes TK1' => true,
-            'Faskes TK2' => true,
-            'Faskes TK3' => true,
-            'Category' => 9
+            'generic_name' => 'desfluran',
+            'form' => 'ih',
+            'faskes_tk2' => true,
+            'faskes_tk3' => true,
+            'category' => 6
         ]);
         DB::table('medicines')->insert([
-            'Generic Name' => 'atropin',
-            'Form' => 'inj 0,25 mg/mL (i.v.)',
-            'Faskes TK1' => true,
-            'Faskes TK2' => true,
-            'Faskes TK3' => true,
-            'Category' => 9
-        ]);
-        DB::table('medicines')->insert([
-            'Generic Name' => 'efedrin',
-            'Form' => 'inj 10% ',
-            'Faskes TK2' => true,
-            'Faskes TK3' => true,
-            'Category' => 9
+            'generic_name' => 'halotan',
+            'description' => 'Tidak boleh digunakan berulang. Tidak untuk pasien dengan gangguan fungsi hati.',
+            'form' => 'ih',
+            'faskes_tk2' => true,
+            'faskes_tk3' => true,
+            'category' => 6
         ]);
 
         DB::table('medicines')->insert([
-            'Generic Name' => 'magnesium sulfat',
-            'Form' => 'serb',
-            'Faskes TK1' => true,
-            'Faskes TK2' => true,
-            'Faskes TK3' => true,
-            'Category' => 10
+            'generic_name' => 'atropin',
+            'form' => 'inj 0,25 mg/mL (i.v./s.k.)',
+            'faskes_tk1' => true,
+            'faskes_tk2' => true,
+            'faskes_tk3' => true,
+            'category' => 7
+        ]);
+        DB::table('medicines')->insert([
+            'generic_name' => 'diazepam',
+            'form' => 'inj 5 mg/mL',
+            'faskes_tk1' => true,
+            'faskes_tk2' => true,
+            'faskes_tk3' => true,
+            'category' => 7
+        ]);
+        DB::table('medicines')->insert([
+            'generic_name' => 'midazolam',
+            'description' => 'Dapat digunakan untuk premedikasi sebelum induksi anestesi dan rumatan selama anestesi umum', 'form' => 'inj 100 mcg/mL',
+            'restriction_formula' => '1 mg/jam (24 mg/hari).  - Dosis premedikasi: 8 vial/kasus',
+            'faskes_tk2' => true,
+            'faskes_tk3' => true,
+            'category' => 7
+        ]);
+
+        DB::table('medicines')->insert([
+            'generic_name' => 'deksametason',
+            'restriction_formula' => '20 mg/hari',
+            'form' => 'inj 5 mg/mL',
+            'faskes_tk1' => true,
+            'faskes_tk2' => true,
+            'faskes_tk3' => true,
+            'category' => 8
+        ]);
+
+        DB::table('medicines')->insert([
+            'generic_name' => 'difenhidramin',
+            'restriction_formula' => '30 mg/hari.',
+            'form' => 'inj 10 mg/mL (i.v./i.m.) ',
+            'faskes_tk1' => true,
+            'faskes_tk2' => true,
+            'faskes_tk3' => true,
+            'category' => 8
+        ]);
+        DB::table('medicines')->insert([
+            'generic_name' => 'epinefrin (adrenalin)',
+            'form' => 'inj 1 mg/mL',
+            'faskes_tk1' => true,
+            'faskes_tk2' => true,
+            'faskes_tk3' => true,
+            'category' => 8
+        ]);
+
+        DB::table('medicines')->insert([
+            'generic_name' => 'atropin',
+            'form' => 'tab 0,5 mg ',
+            'faskes_tk1' => true,
+            'faskes_tk2' => true,
+            'faskes_tk3' => true,
+            'category' => 9
+        ]);
+        DB::table('medicines')->insert([
+            'generic_name' => 'atropin',
+            'form' => 'inj 0,25 mg/mL (i.v.)',
+            'faskes_tk1' => true,
+            'faskes_tk2' => true,
+            'faskes_tk3' => true,
+            'category' => 9
+        ]);
+        DB::table('medicines')->insert([
+            'generic_name' => 'efedrin',
+            'form' => 'inj 10% ',
+            'faskes_tk2' => true,
+            'faskes_tk3' => true,
+            'category' => 9
+        ]);
+
+        DB::table('medicines')->insert([
+            'generic_name' => 'magnesium sulfat',
+            'form' => 'serb',
+            'faskes_tk1' => true,
+            'faskes_tk2' => true,
+            'faskes_tk3' => true,
+            'category' => 10
         ]);
     }
 }
