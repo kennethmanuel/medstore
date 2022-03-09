@@ -21,7 +21,7 @@ class MedicineSeeder extends Seeder
             'description' => 'inj: Hanya untuk nyeri berat dan harus diberikan oleh tim medis yang dapat melakukan resusitasi.',
             'faskes_tk2' => true,
             'faskes_tk3' => true,
-            'category' => 1,
+            'category_id' => 1,
             'img_path' => 'medicine/faerie.jpg'
         ]);
         DB::table('medicines')->insert([
@@ -31,7 +31,7 @@ class MedicineSeeder extends Seeder
             'description' => 'patch: - Untuk nyeri kronik pada pasien kanker yang tidak terkendali.  - Tidak untuk nyeri akut.',
             'faskes_tk2' => true,
             'faskes_tk3' => true,
-            'category' => 1,
+            'category_id' => 1,
             'img_path' => 'medicine/salve.jpg'
         ]);
         DB::table('medicines')->insert([
@@ -41,7 +41,7 @@ class MedicineSeeder extends Seeder
             'description' => 'patch: - Untuk nyeri kronik pada pasien kanker yang tidak terkendali.  - Tidak untuk nyeri akut.',
             'faskes_tk2' => true,
             'faskes_tk3' => true,
-            'category' => 1,
+            'category_id' => 1,
             'img_path' => 'medicine/tango.jpg'
         ]);
 
@@ -52,7 +52,7 @@ class MedicineSeeder extends Seeder
             'faskes_tk1' => true,
             'faskes_tk2' => true,
             'faskes_tk3' => true,
-            'category' => 2
+            'category_id' => 2
         ]);
         DB::table('medicines')->insert([
             'generic_name' => 'asam mefenamat',
@@ -61,7 +61,7 @@ class MedicineSeeder extends Seeder
             'faskes_tk1' => true,
             'faskes_tk2' => true,
             'faskes_tk3' => true,
-            'category' => 2
+            'category_id' => 2
         ]);
         DB::table('medicines')->insert([
             'generic_name' => 'ibuprofen',
@@ -70,7 +70,7 @@ class MedicineSeeder extends Seeder
             'faskes_tk1' => true,
             'faskes_tk2' => true,
             'faskes_tk3' => true,
-            'category' => 2
+            'category_id' => 2
         ]);
 
         DB::table('medicines')->insert([
@@ -81,7 +81,7 @@ class MedicineSeeder extends Seeder
             'faskes_tk1' => true,
             'faskes_tk2' => true,
             'faskes_tk3' => true,
-            'category' => 3
+            'category_id' => 3
         ]);
         DB::table('medicines')->insert([
             'generic_name' => 'alopurinol',
@@ -91,7 +91,7 @@ class MedicineSeeder extends Seeder
             'faskes_tk1' => true,
             'faskes_tk2' => true,
             'faskes_tk3' => true,
-            'category' => 3
+            'category_id' => 3
         ]);
         DB::table('medicines')->insert([
             'generic_name' => 'kolkisin',
@@ -101,7 +101,7 @@ class MedicineSeeder extends Seeder
             'faskes_tk1' => true,
             'faskes_tk2' => true,
             'faskes_tk3' => true,
-            'category' => 3
+            'category_id' => 3
         ]);
 
         DB::table('medicines')->insert([
@@ -111,7 +111,7 @@ class MedicineSeeder extends Seeder
             'faskes_tk1' => true,
             'faskes_tk2' => true,
             'faskes_tk3' => true,
-            'category' => 4
+            'category_id' => 4
         ]);
         DB::table('medicines')->insert([
             'generic_name' => 'gabapentin',
@@ -120,7 +120,7 @@ class MedicineSeeder extends Seeder
             'restriction_formula' => '60 kaps/bulan',
             'faskes_tk2' => true,
             'faskes_tk3' => true,
-            'category' => 4
+            'category_id' => 4
         ]);
         DB::table('medicines')->insert([
             'generic_name' => 'gabapentin',
@@ -129,7 +129,7 @@ class MedicineSeeder extends Seeder
             'restriction_formula' => '30 kaps/bulan',
             'faskes_tk2' => true,
             'faskes_tk3' => true,
-            'category' => 4
+            'category_id' => 4
         ]);
 
         DB::table('medicines')->insert([
@@ -137,7 +137,7 @@ class MedicineSeeder extends Seeder
             'form' => 'inj 0,5%',
             'faskes_tk2' => true,
             'faskes_tk3' => true,
-            'category' => 5
+            'category_id' => 5
         ]);
         DB::table('medicines')->insert([
             'generic_name' => 'bupivakain heavy',
@@ -145,7 +145,7 @@ class MedicineSeeder extends Seeder
             'form' => 'inj 0,5% + glukosa 8% ',
             'faskes_tk2' => true,
             'faskes_tk3' => true,
-            'category' => 5
+            'category_id' => 5
         ]);
         DB::table('medicines')->insert([
             'generic_name' => 'etil klorida',
@@ -153,7 +153,7 @@ class MedicineSeeder extends Seeder
             'faskes_tk1' => true,
             'faskes_tk2' => true,
             'faskes_tk3' => true,
-            'category' => 5
+            'category_id' => 5
         ]);
 
         DB::table('medicines')->insert([
@@ -162,14 +162,14 @@ class MedicineSeeder extends Seeder
             'form' => 'inj 100 mcg/mL',
             'faskes_tk2' => true,
             'faskes_tk3' => true,
-            'category' => 6
+            'category_id' => 6
         ]);
         DB::table('medicines')->insert([
             'generic_name' => 'desfluran',
             'form' => 'ih',
             'faskes_tk2' => true,
             'faskes_tk3' => true,
-            'category' => 6
+            'category_id' => 6
         ]);
         DB::table('medicines')->insert([
             'generic_name' => 'halotan',
@@ -177,7 +177,7 @@ class MedicineSeeder extends Seeder
             'form' => 'ih',
             'faskes_tk2' => true,
             'faskes_tk3' => true,
-            'category' => 6
+            'category_id' => 6
         ]);
 
         DB::table('medicines')->insert([
@@ -186,7 +186,7 @@ class MedicineSeeder extends Seeder
             'faskes_tk1' => true,
             'faskes_tk2' => true,
             'faskes_tk3' => true,
-            'category' => 7
+            'category_id' => 7
         ]);
         DB::table('medicines')->insert([
             'generic_name' => 'diazepam',
@@ -194,7 +194,7 @@ class MedicineSeeder extends Seeder
             'faskes_tk1' => true,
             'faskes_tk2' => true,
             'faskes_tk3' => true,
-            'category' => 7
+            'category_id' => 7
         ]);
         DB::table('medicines')->insert([
             'generic_name' => 'midazolam',
@@ -202,7 +202,7 @@ class MedicineSeeder extends Seeder
             'restriction_formula' => '1 mg/jam (24 mg/hari).  - Dosis premedikasi: 8 vial/kasus',
             'faskes_tk2' => true,
             'faskes_tk3' => true,
-            'category' => 7
+            'category_id' => 7
         ]);
 
         DB::table('medicines')->insert([
@@ -212,7 +212,7 @@ class MedicineSeeder extends Seeder
             'faskes_tk1' => true,
             'faskes_tk2' => true,
             'faskes_tk3' => true,
-            'category' => 8
+            'category_id' => 8
         ]);
 
         DB::table('medicines')->insert([
@@ -222,7 +222,7 @@ class MedicineSeeder extends Seeder
             'faskes_tk1' => true,
             'faskes_tk2' => true,
             'faskes_tk3' => true,
-            'category' => 8
+            'category_id' => 8
         ]);
         DB::table('medicines')->insert([
             'generic_name' => 'epinefrin (adrenalin)',
@@ -230,7 +230,7 @@ class MedicineSeeder extends Seeder
             'faskes_tk1' => true,
             'faskes_tk2' => true,
             'faskes_tk3' => true,
-            'category' => 8
+            'category_id' => 8
         ]);
 
         DB::table('medicines')->insert([
@@ -239,7 +239,7 @@ class MedicineSeeder extends Seeder
             'faskes_tk1' => true,
             'faskes_tk2' => true,
             'faskes_tk3' => true,
-            'category' => 9
+            'category_id' => 9
         ]);
         DB::table('medicines')->insert([
             'generic_name' => 'atropin',
@@ -247,14 +247,14 @@ class MedicineSeeder extends Seeder
             'faskes_tk1' => true,
             'faskes_tk2' => true,
             'faskes_tk3' => true,
-            'category' => 9
+            'category_id' => 9
         ]);
         DB::table('medicines')->insert([
             'generic_name' => 'efedrin',
             'form' => 'inj 10% ',
             'faskes_tk2' => true,
             'faskes_tk3' => true,
-            'category' => 9
+            'category_id' => 9
         ]);
 
         DB::table('medicines')->insert([
@@ -263,7 +263,7 @@ class MedicineSeeder extends Seeder
             'faskes_tk1' => true,
             'faskes_tk2' => true,
             'faskes_tk3' => true,
-            'category' => 10
+            'category_id' => 10
         ]);
     }
 }
