@@ -7,5 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Medicine extends Model
 {
-    use HasFactory;
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }

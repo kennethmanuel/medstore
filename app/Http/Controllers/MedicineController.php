@@ -2,21 +2,35 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Medicine;
 use Illuminate\Http\Request;
 
 class MedicineController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        // dd($collection_medicines);
         return view('medicine.index', [
-            "medicine_collection" => Medicine::All()
+            "medicineCollection" => Medicine::All()
+        ]);
+    }
+
+    public function show($id)
+    {
+        $medicine = Medicine::find($id);
+        return view('medicine.show', [
+            "medicine" => $medicine,
+        ]);
+    }
+
+    public function med_by_category(int $categoryID)
+    {
+        $medicineCollection = Medicine::where('category_id', $categoryID)->get();
+        $categoryName = Category::find($categoryID)->name;
+        return view('medicine.med_by_category', [
+            "medicineCollection" => $medicineCollection,
+            "categoryID" => $categoryID,
+            "categoryName" => $categoryName
         ]);
     }
 
@@ -37,17 +51,6 @@ class MedicineController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Medicine  $medicine
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Medicine $medicine)
     {
         //
     }
@@ -86,11 +89,4 @@ class MedicineController extends Controller
         //
     }
 
-    public function med_by_category(int $categoryid)
-    {
-        // dd(Medicine::where('Category', $categoryid)->get());
-        return view('medicine_gallery', [
-            "medicine_collection" => Medicine::where('Category', $categoryid)->get()
-        ]);
-    }
 }

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MedicineController;
+use App\Models\Medicine;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,4 +28,5 @@ Route::get('/catalogue/med_equip', function () {
 });
 
 Route::get('/catalogue/medicine', [MedicineController::class, 'index']);
+Route::get('/catalogue/medicine/{id}', [MedicineController::class, 'show']);
 Route::get('/catalogue/medicine/category/{category}', [MedicineController::class, 'med_by_category']);

@@ -12,8 +12,9 @@
 <body>
 
     <div class="container mt-3">
-        {{-- <h2>Basic Table</h2>
-        <p>The .table class adds basic styling (light padding and horizontal dividers) to a table:</p> --}}
+        <h1>List Medicine by Category</h1>
+        <p>Category ID: {{$categoryID}}</p>
+        <p>Category ID: {{$categoryName}}</p>
         <table class="table table-dark">
             <thead>
                 <tr>
@@ -28,17 +29,17 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach($medicineCollection as $medicine)
-                <tr>
-                    <td>{{ $medicine['generic_name'] }}</td>
-                    <td>{{ $medicine['form'] }}</td>
-                    <td>{{ $medicine['restriction_formula'] }}</td>
-                    <td>{{ $medicine['description'] }}</td>
-                    <td>{{ $medicine['faskes_tk1'] }}</td>
-                    <td>{{ $medicine['faskes_tk2'] }}</td>
-                    <td>{{ $medicine['faskes_tk3'] }}</td>
-                    <td>{{ $medicine['category']['name'] }}</td>
-                </tr>
+                @foreach ($medicineCollection as $medicine)
+                    <tr>
+                        <td>{{ $medicine['generic_name'] }}</td>
+                        <td>{{ $medicine['form'] }}</td>
+                        <td>{{ $medicine['restriction_formula'] }}</td>
+                        <td>{{ $medicine['description'] }}</td>
+                        <td>{{ $medicine['faskes_tk1'] }}</td>
+                        <td>{{ $medicine['faskes_tk2'] }}</td>
+                        <td>{{ $medicine['faskes_tk3'] }}</td>
+                        <td>{{ $medicine['category']['name'] }}</td>
+                    </tr>
                 @endforeach
             </tbody>
         </table>
