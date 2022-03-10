@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Medicine;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class MedicineController extends Controller
 {
@@ -35,58 +36,67 @@ class MedicineController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Get collection of medicine with generic_name, form, price
      *
-     * @return \Illuminate\Http\Response
+     * @return Illuminate\Database\Eloquent\Collection
      */
-    public function create()
+    public function name_formula_price()
     {
-        //
+        $medicineCollection = Medicine::select([
+            'generic_name',
+            'form',
+            'price'
+        ])->get();
+        dd($medicineCollection);
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Get collection of medicine with generic name, form, price
+     * and category name
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return Illuminate\Database\Eloquent\Collection
      */
-    public function store(Request $request)
+    public function name_formula_price_catname()
     {
-        //
+        $medicineCollection = Medicine::select([
+            'generic_name',
+            'form',
+            'price'
+        ])->addSelect([
+            'category_name' => Category::select('name')->whereColumn('category_id', 'id'),
+        ])->get();
+        dd($medicineCollection);
     }
-
+    
     /**
-     * Show the form for editing the specified resource.
+     * Get collection of medicine name that only have 1 form
      *
-     * @param  \App\Models\Medicine  $medicine
-     * @return \Illuminate\Http\Response
+     * @return Illuminate\Database\Eloquent\Collection
      */
-    public function edit(Medicine $medicine)
+    public function have_one_form_only()
     {
-        //
+        $medicine = DB::table('medicines')
+            ->select('generic_name', DB::raw('COUNT(id) as total_form'))
+            ->groupBy('generic_name')
+            ->havingRaw('total_form = ?', [1])
+            ->get();
+        dd($medicine);
     }
 
+    
     /**
-     * Update the specified resource in storage.
+     * Get collection of category name, medicine name, and price 
+     * with the highest price
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Medicine  $medicine
-     * @return \Illuminate\Http\Response
+     * @return Illuminate\Database\Eloquent\Collection
      */
-    public function update(Request $request, Medicine $medicine)
+    public function highest_price()
     {
-        //
+        $highestMedicinePrice = DB::table('medicines')
+            ->select('categories.name as category_name', 'medicines.generic_name', 'medicines.price')
+            ->join('categories', 'categories.id', '=', 'medicines.category_id')
+            ->whereRaw('medicines.price = ( SELECT MAX(medicines.price) FROM medicines )')
+            ->get();
+        dd($highestMedicinePrice);
     }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Medicine  $medicine
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Medicine $medicine)
-    {
-        //
-    }
-
 }
