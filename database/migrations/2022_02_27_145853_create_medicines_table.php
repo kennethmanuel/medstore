@@ -3,7 +3,6 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use phpDocumentor\Reflection\PseudoTypes\False_;
 
 class CreateMedicinesTable extends Migration
 {
@@ -19,10 +18,14 @@ class CreateMedicinesTable extends Migration
             $table->string('generic_name');
             $table->string('form');
             $table->string('restriction_formula')->nullable();
-            $table->string('description')->nullable();
-            $table->boolean('faskes_tk1')->default(false);
-            $table->boolean('faskes_tk2')->default(false);
-            $table->boolean('faskes_tk3')->default(false);
+            $table->double('price',12,2);
+            $table->text('description')->nullable();
+            $table->unsignedBigInteger('category_id');
+            $table->boolean('faskes1')->default(0);
+            $table->boolean('faskes2')->default(0);
+            $table->boolean('faskes3')->default(0);
+ 
+            
             $table->timestamps();
         });
     }
