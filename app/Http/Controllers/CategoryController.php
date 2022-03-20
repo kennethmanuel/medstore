@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class CategoryController extends Controller
@@ -15,8 +14,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categoryCollection = Category::all();
-        dd($categoryCollection);
+        return view('admin.report.1', [
+            "categoryCollection" => Category::all()
+        ]);
     }
 
     /**
@@ -33,7 +33,11 @@ class CategoryController extends Controller
             ->leftJoin('medicines', 'categories.id', '=', 'medicines.category_id')
             ->whereNotNull('medicines.id')
             ->count('categories.id');
-        dd($countHaveMedicine);
+        
+            
+        return view('admin.report.4', [
+            "number" => $countHaveMedicine
+        ]);
     }
     
     /**
@@ -50,7 +54,11 @@ class CategoryController extends Controller
             ->leftJoin('medicines', 'categories.id', '=', 'medicines.category_id')
             ->whereNull('medicines.id')
             ->get();
-        dd($categoryCollection);
+        
+
+        return view('admin.report.5', [
+            "categoryCollection" => $categoryCollection
+        ]);
     }
     
     /**
@@ -65,8 +73,10 @@ class CategoryController extends Controller
             ->leftJoin('medicines', 'categories.id', '=', 'medicines.category_id')
             ->groupBy('categories.id')
             ->get();
-        // ->avg('price');
-        dd($categoryCollection);
+
+        return view('admin.report.6', [
+            "categoryCollection" => $categoryCollection
+        ]);
     }
         
     /**
@@ -76,12 +86,15 @@ class CategoryController extends Controller
      */
     public function have_one_medicine_only()
     {
-        $medicineCollection = DB::table('medicines')
+        $categoryCollection = DB::table('medicines')
             ->select('categories.name', DB::raw('COUNT(categories.id) as total'))
             ->leftJoin('categories', 'categories.id', '=', 'medicines.category_id')
             ->groupBy('categories.id')
             ->havingRaw('total = ?', [1])
             ->get();
-        dd($medicineCollection);
+        
+        return view('admin.report.7', [
+            "categoryCollection" => $categoryCollection
+        ]);
     }
 }

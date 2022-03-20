@@ -11,7 +11,7 @@ class MedicineController extends Controller
 {
     public function index()
     {
-        return view('medicine.index', [
+        return view('admin.medicine.index', [
             "medicineCollection" => Medicine::All()
         ]);
     }
@@ -47,7 +47,9 @@ class MedicineController extends Controller
             'form',
             'price'
         ])->get();
-        dd($medicineCollection);
+        return view('admin.report.2', [
+            "medicineCollection" => $medicineCollection
+        ]);
     }
 
     /**
@@ -65,7 +67,10 @@ class MedicineController extends Controller
         ])->addSelect([
             'category_name' => Category::select('name')->whereColumn('category_id', 'id'),
         ])->get();
-        dd($medicineCollection);
+
+        return view('admin.report.3', [
+            "medicineCollection" => $medicineCollection
+        ]);
     }
     
     /**
@@ -75,12 +80,16 @@ class MedicineController extends Controller
      */
     public function have_one_form_only()
     {
-        $medicine = DB::table('medicines')
+        $medicineCollection = DB::table('medicines')
             ->select('generic_name', DB::raw('COUNT(id) as total_form'))
             ->groupBy('generic_name')
             ->havingRaw('total_form = ?', [1])
             ->get();
-        dd($medicine);
+        
+        return view('admin.report.8', [
+            "medicineCollection" => $medicineCollection
+        ]);
+
     }
 
     
@@ -92,11 +101,14 @@ class MedicineController extends Controller
      */
     public function highest_price()
     {
-        $highestMedicinePrice = DB::table('medicines')
+        $medicineCollection = DB::table('medicines')
             ->select('categories.name as category_name', 'medicines.generic_name', 'medicines.price')
             ->join('categories', 'categories.id', '=', 'medicines.category_id')
             ->whereRaw('medicines.price = ( SELECT MAX(medicines.price) FROM medicines )')
             ->get();
-        dd($highestMedicinePrice);
+
+        return view('admin.report.9', [
+            "medicineCollection" => $medicineCollection
+        ]);
     }
 }
