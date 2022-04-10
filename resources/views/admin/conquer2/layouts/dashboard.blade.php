@@ -19,7 +19,7 @@
 <body class="page-header-fixed">
     @include('admin.conquer2.partials.header')
 
-    <div class="clearfix"> </div>
+    {{-- <div class="clearfix"> </div> --}}
 
     <div class="page-container">
         @include('admin.conquer2.partials.sidebar')
@@ -30,6 +30,7 @@
                 @yield('content')
             </div>
         </div>
+    @yield('javascript')
 
 </body>
 

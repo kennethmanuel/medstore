@@ -30,8 +30,8 @@ Route::get('/catalogue/med_equip', function () {
     return view('med_equip');
 });
 
-Route::get('/catalogue/medicine', [MedicineController::class, 'index']);
-Route::get('/catalogue/medicine/{id}', [MedicineController::class, 'show']);
+Route::get('/catalogue/medicine', [MedicineController::class, 'index'])->name('list.medicine');
+Route::get('/catalogue/medicine/{id}', [MedicineController::class, 'show'])->name('catalogue.medicine');
 Route::get('/catalogue/medicine/category/{category}', [MedicineController::class, 'med_by_category']);
 
 Route::get('/query1table/1', [CategoryController::class, 'index']);
@@ -44,3 +44,12 @@ Route::get('/aggregatequery/4', [CategoryController::class, 'have_one_medicine_o
 Route::get('/aggregatequery/5', [MedicineController::class, 'have_one_form_only']);
 Route::get('/aggregatequery/6', [MedicineController::class, 'highest_price']);
 
+Route::get('/testmodal', function() {
+    return view('modal_test');
+});
+
+Route::get('/testajax', function() {
+    return view('ajax_test');
+});
+
+Route::post('/medicine/showInfo', [MedicineController::class, 'showInfo'])->name('medicine.showInfo');

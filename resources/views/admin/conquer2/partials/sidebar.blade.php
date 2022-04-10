@@ -20,7 +20,7 @@
                  </form>
              </li>
              <li class="start active ">
-                 <a href="index.html">
+                 <a href="{{ url('/catalogue/medicine')  }}">
                      <i class="icon-home"></i>
                      <span class="title">Dashboard</span>
                      <span class="selected"></span>
