@@ -80,6 +80,13 @@
                      </li>
                  </ul>
              </li>
+             <li>
+                 <a href="{{ url('/week8')  }}">
+                     <i class="icon-puzzle"></i>
+                     <span class="title">Week 8</span>
+                     <span class="selected"></span>
+                 </a>
+             </li>
          </ul>
      </div>
  </div>

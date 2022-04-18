@@ -3,6 +3,7 @@
 use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MedicineController;
+use App\Http\Controllers\TransactionController;
 use App\Models\Category;
 use App\Models\Medicine;
 use Faker\Provider\Medical;
@@ -53,3 +54,5 @@ Route::get('/testajax', function() {
 });
 
 Route::post('/medicine/showInfo', [MedicineController::class, 'showInfo'])->name('medicine.showInfo');
+
+Route::get('/week8', [TransactionController::class, 'index']);
