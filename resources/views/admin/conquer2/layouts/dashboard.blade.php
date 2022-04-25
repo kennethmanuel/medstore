@@ -24,13 +24,13 @@
     <div class="page-container">
         @include('admin.conquer2.partials.sidebar')
 
-        <div class="page-content">
-            <div class="page-content-wrapper">
-                @include('admin.conquer2.js')
+        <div class="page-content-wrapper">
+            <div class="page-content">
                 @yield('content')
             </div>
         </div>
-    @yield('javascript')
+    </div>
+    @include('admin.conquer2.js')
 
 </body>
 

@@ -1,5 +1,10 @@
 @extends('admin.conquer2.layouts.dashboard')
 @section('content')
+    @if (session('status'))
+        <div class="alert alert-success">
+            {{ session('status') }}
+        </div>
+    @endif
     <table class="table">
         <thead>
             <tr>
@@ -13,6 +18,8 @@
                 <th>Faskes TK 3</th>
                 <th>Category</th>
                 <th>Detail</th>
+                <th>Edit</th>
+                <th>Delete</th>
             </tr>
         </thead>
         <tbody>
@@ -58,6 +65,16 @@
                                 </div>
                             </div>
                         </div>
+                    </td>
+                    <td>
+                        <a class='btn btn-info' href="{{ route('medicine.edit', $medicine->id) }}">Edit</a>
+                    </td>
+                    <td>
+                        <form method="POST" action="{{ route('medicine.destroy', $medicine->id) }}">
+                            @csrf
+                            @method('DELETE')
+                            <input type="submit" class="btn btn-danger" value='Delete'>
+                        </form>
                     </td>
                 </tr>
             @endforeach

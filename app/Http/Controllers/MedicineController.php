@@ -127,4 +127,55 @@ Did you know? <br>Most expensive medicine is $result->generic_name.</div>"
             "categoryCollection" => Category::all()
         ]);
     }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        //
+        return view('admin.medicine.edit', [
+            "medicine" => Medicine::find($id),
+            "categoryCollection" => Category::all()
+        ]);
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        //
+        $medicine = Medicine::find($id);
+        $medicine->generic_name = $request->generic_name;
+        $medicine->restriction_formula = $request->restriction_formula;
+        $medicine->price = $request->price;
+        $medicine->description = $request->description;
+        $medicine->category_id = $request->category_id;
+        $medicine->faskes1 = ($request->faskes1 != null) ? 1 : 0;
+        $medicine->faskes2 = ($request->faskes2 != null) ? 1 : 0;
+        $medicine->faskes3 = ($request->faskes3 != null) ? 1 : 0;
+        $medicine->save();
+        return redirect()->route('medicine.index')->with('status', 'Medicine data changed!');
+    }
+
+        /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        $medicine = Medicine::find($id);
+        $medicine->delete();
+        return redirect()->route('medicine.index')->with('status', 'Medicine data deleted!');
+    }
 }
