@@ -1,6 +1,6 @@
 @extends('admin.conquer2.layouts.dashboard')
 @section('content')
-    <table>
+    <table class="table">
         <thead>
             <tr>
                 <th>Id</th>

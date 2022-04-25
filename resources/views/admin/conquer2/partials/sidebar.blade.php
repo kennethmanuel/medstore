@@ -87,6 +87,20 @@
                      <span class="selected"></span>
                  </a>
              </li>
+             <li>
+                 <a href="javascript:;">
+                     <i class="icon-puzzle"></i>
+                     <span class="title">Form</span>
+                     <span class="arrow "></span>
+                 </a>
+                 <ul class="sub-menu">
+                     <li>
+                         <a href="{{ url('/buyer/create')  }}">
+                             <i class="icon-anchor"></i>
+                             Buyer</a>
+                     </li>
+                 </ul>
+             </li>
          </ul>
      </div>
  </div>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BuyerController;
 use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MedicineController;
@@ -31,6 +32,7 @@ Route::get('/catalogue/med_equip', function () {
     return view('med_equip');
 });
 
+Route::resource('/medicine', MedicineController::class);
 Route::get('/catalogue/medicine', [MedicineController::class, 'index'])->name('list.medicine');
 Route::get('/catalogue/medicine/{id}', [MedicineController::class, 'show'])->name('catalogue.medicine');
 Route::get('/catalogue/medicine/category/{category}', [MedicineController::class, 'med_by_category']);
@@ -56,3 +58,5 @@ Route::get('/testajax', function() {
 Route::post('/medicine/showInfo', [MedicineController::class, 'showInfo'])->name('medicine.showInfo');
 
 Route::get('/week8', [TransactionController::class, 'index']);
+
+Route::resource('/buyer', BuyerController::class);

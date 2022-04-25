@@ -120,4 +120,11 @@ class MedicineController extends Controller
 Did you know? <br>Most expensive medicine is $result->generic_name.</div>"
         ), 200);
     }
+
+    public function create()
+    {
+        return view('admin.medicine.create', [
+            "categoryCollection" => Category::all()
+        ]);
+    }
 }
