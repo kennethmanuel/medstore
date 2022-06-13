@@ -12,7 +12,15 @@ class MedicineController extends Controller
     public function index()
     {
         return view('admin.medicine.index', [
-            "medicineCollection" => Medicine::All()
+            "medicineCollection" => Medicine::All(),
+            "categoryCollection" => Category::All()
+        ]);
+    }
+
+    public function getEditForm()
+    {
+        return view('admin.medicine.getEditForm', [
+            "categoryCollection" => Category::All()
         ]);
     }
 
@@ -166,7 +174,7 @@ Did you know? <br>Most expensive medicine is $result->generic_name.</div>"
         return redirect()->route('medicine.index')->with('status', 'Medicine data changed!');
     }
 
-        /**
+    /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
@@ -177,5 +185,35 @@ Did you know? <br>Most expensive medicine is $result->generic_name.</div>"
         $medicine = Medicine::find($id);
         $medicine->delete();
         return redirect()->route('medicine.index')->with('status', 'Medicine data deleted!');
+    }
+
+    public function front_index()
+    {
+        return view('frontend.product', [
+            "medicines" => Medicine::All()
+        ]);
+    }
+
+    public function cart()
+    {
+        return view('frontend.cart');
+    }
+
+    public function addToCart($id)
+    {
+        $medicine = Medicine::find($id);
+        $cart = session()->get('cart');
+        if(!isset($cart[$id])) 
+        {
+            $cart[$id] = [
+                "name" => $medicine->generic_name,
+                "quantity" => 1,
+                "price" => $medicine->price,
+            ];
+        } else {
+            $cart[$id]['quantity']++;
+        }
+        session()->put('cart', $cart);
+        return redirect()->back()->with('success', 'Medicine added to cart successfuly!');
     }
 }

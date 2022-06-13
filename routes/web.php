@@ -1,13 +1,14 @@
 <?php
 
-use App\Http\Controllers\BuyerController;
-use App\Http\Controllers\CategoryController;
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\MedicineController;
-use App\Http\Controllers\TransactionController;
 use App\Models\Category;
 use App\Models\Medicine;
 use Faker\Provider\Medical;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BuyerController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\MedicineController;
+use App\Http\Controllers\TransactionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -60,3 +61,11 @@ Route::post('/medicine/showInfo', [MedicineController::class, 'showInfo'])->name
 Route::get('/week8', [TransactionController::class, 'index']);
 
 Route::resource('/buyer', BuyerController::class);
+
+// Cart Routing
+Route::get('/', [MedicineController::class, 'front_index']);
+Route::get('/cart', [MedicineController::class, 'cart']);
+Route::get('/add-to-cart/{id}', [MedicineController::class, 'addToCart']);
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

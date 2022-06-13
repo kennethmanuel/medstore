@@ -5,6 +5,89 @@
             {{ session('status') }}
         </div>
     @endif
+    <div>
+        <a href="#modalcreate" data-toggle="modal" class="btn btn-info">
+            + Supplier Baru (modal)
+        </a>
+    </div>
+    <div class="modal fade" id="modalcreate" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                </div>
+                <div class="modal-body">
+                    <form method="POST" class="form-horizontal" role="form"
+                        action="">
+                        @csrf
+                        <div class="form-body">
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Generic Name</label>
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control" placeholder="enter text"
+                                         name="generic_name">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Restriction Formula</label>
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control" placeholder="enter text"
+                                         name="restriction_formula">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Price</label>
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control" placeholder="enter text"
+                                         name="price">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Description</label>
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control" placeholder="enter text"
+                                         name="description">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Category</label>
+                                <div class="col-md-9">
+                                    <select class="form-control" name="category_id">
+                                        @foreach ($categoryCollection as $category)
+                                            <option value="{{ $category->id }}">
+                                                {{ $category->name }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Faskes</label>
+                                <div class="checkbox-list">
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" 
+                                            name="faskes1" > Faskes 1 </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" 
+                                            name="faskes2"> Faskes 2 </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" 
+                                            name="faskes3"> Faskes 3 </label>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <table class="table">
         <thead>
             <tr>
@@ -24,7 +107,8 @@
         </thead>
         <tbody>
             @foreach ($medicineCollection as $medicine)
-                <div class="modal fade" id="detail_{{ $medicine->id }}" tabindex="-1" role="basic" aria-hidden="true">
+                <div class="modal fade" id="detail_{{ $medicine->id }}" tabindex="-1" role="basic"
+                    aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
